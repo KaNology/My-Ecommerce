@@ -3,7 +3,6 @@ package com.example.MyEcommerce.service;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
-import java.util.Optional;
 
 import javax.xml.bind.DatatypeConverter;
 
@@ -66,6 +65,7 @@ public class UserService {
 		return hash;
 	}
 
+	// Should throw the same message for every error because it will be more difficult for outsiders to know how to hack the system
 	public SigninResponseDto signIn(SigninDto signInDto) {
 		// find user by email
 		
