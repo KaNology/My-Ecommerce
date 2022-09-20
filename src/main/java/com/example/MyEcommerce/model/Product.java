@@ -65,4 +65,16 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public Product(@NotNull String name, @NotNull String imageURL, @NotNull double price, @NotNull String description,
+			Category category) {
+		super();
+		this.name = name;
+		this.imageURL = imageURL;
+		this.price = price;
+		this.description = description;
+		this.category = category;
+	}
+	public Product() {
+		super();
+	}
 }

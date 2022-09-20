@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 
 public class ProductDto {
 
-	private Integer id; // This is optional
+	 private Integer id; // This is optional
 	private @NotNull String name;
 	private @NotNull String imageURL;
 	private @NotNull double price;
@@ -32,6 +32,7 @@ public class ProductDto {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
 	public Integer getId() {
 		return id;
 	}

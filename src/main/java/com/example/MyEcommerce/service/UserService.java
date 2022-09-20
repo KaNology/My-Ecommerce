@@ -78,7 +78,7 @@ public class UserService {
 		// hash the password and compare the password
 		
 		try {
-			if (user.getPassword().equals(hashPassword(signInDto.getPassword()))) {
+			if (!user.getPassword().equals(hashPassword(signInDto.getPassword()))) {
 				throw new AuthenticationFailException("wrong password");
 			}
 		}

@@ -11,7 +11,6 @@ import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.checkout.Session;
 import com.stripe.param.checkout.SessionCreateParams;
-import com.stripe.param.checkout.SessionCreateParams.LineItem;
 
 @Service
 public class OrderService {
@@ -39,8 +38,8 @@ public class OrderService {
 				.addPaymentMethodType(SessionCreateParams.PaymentMethodType.CARD)
 				.setMode(SessionCreateParams.Mode.PAYMENT)
 				.setCancelUrl(failureURL)
-				.setSuccessUrl(successURL)
 				.addAllLineItem(sessionItemList)
+				.setSuccessUrl(successURL)
 				.build();
 		
 		return Session.create(params);
@@ -55,7 +54,7 @@ public class OrderService {
 	private SessionCreateParams.LineItem.PriceData createPriceData(CheckoutItemDto item) {
 		// TODO Auto-generated method stub
 		return SessionCreateParams.LineItem.PriceData.builder().setCurrency("usd")
-				.setUnitAmount((long) item.getPrice() * 100)
+				.setUnitAmount((long) (item.getPrice() * 100))
 				.setProductData(SessionCreateParams.LineItem.PriceData.ProductData.builder()
 						.setName(item.getProductName()).build())
 				.build();

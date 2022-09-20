@@ -31,6 +31,7 @@ public class ProductService {
 	
 	public ProductDto getProductDto(Product product) {
 		ProductDto productDto = new ProductDto();
+		productDto.setId(product.getId());
 		productDto.setDescription(product.getDescription());
 		productDto.setImageURL(product.getImageURL());
 		productDto.setName(product.getName());
