@@ -1,6 +1,7 @@
 package com.example.MyEcommerce.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import com.example.MyEcommerce.dto.user.SignupDto;
 import com.example.MyEcommerce.service.UserService;
 
 @RequestMapping("/user")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class UserController {
 	@Autowired
